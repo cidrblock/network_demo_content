@@ -1,6 +1,11 @@
 collections:
-- arista.eos
-- cisco.ios
-- cisco.nxos
-- vyos.vyos
-- ansible.utils
+- name: arista.eos
+  source: https://galaxy.ansible.com
+- name: cisco.ios
+  source: https://galaxy.ansible.com
+- name: cisco.nxos
+  source: https://galaxy.ansible.com
+- name: vyos.vyos
+  source: https://galaxy.ansible.com
+- name: ansible.utils
+  source: https://galaxy.ansible.com
