@@ -7,7 +7,7 @@ all:
     ansible_become_method: enable
     ansible_connection: ansible.netcommon.network_cli
     ansible_python_interpreter: python3
-    ansible_network_cli_ssh_type: libssh
+    # ansible_network_cli_ssh_type: libssh
 
   hosts:
   children:
