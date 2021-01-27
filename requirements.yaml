@@ -1,0 +1,6 @@
+collections:
+- arista.eos
+- cisco.ios
+- cisco.nxos
+- vyos.vyos
+- ansible.utils
