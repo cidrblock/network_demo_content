@@ -1,0 +1,4 @@
+- name: Gather the network resources
+  arista.eos.eos_facts:
+      gather_subset: 'min'
+      gather_network_resources: all

@@ -1,0 +1,21 @@
+acls:
+-   acls:
+    -   aces:
+        -   destination:
+                host: 10.1.1.2
+            grant: permit
+            protocol: ip
+            sequence: 10
+            source:
+                subnet_address: 192.168.20.0/24
+        name: test1
+    -   aces:
+        -   destination:
+                any: true
+            grant: permit
+            protocol: ip
+            sequence: 10
+            source:
+                any: true
+        name: test2
+    afi: ipv4

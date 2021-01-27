@@ -1,0 +1,5 @@
+
+- name: Gather the network resources
+  cisco.nxos.nxos_facts:
+      gather_subset: 'min'
+      gather_network_resources: all

@@ -1,0 +1,31 @@
+- name: Build host inventory directories and gather facts
+  hosts: all
+  gather_facts: False
+  vars:
+    inventory_directory: "{{ playbook_dir }}/inventory"
+
+  tasks:
+  - name: Set the inventory directory
+    ansible.builtin.set_fact:
+      inventory_host_directory: "{{ inventory_directory }}/host_vars/{{ inventory_hostname }}"
+  
+  - name: Ensure the inventory directory exists
+    ansible.builtin.file:
+      path: "{{ inventory_host_directory }}"
+      state: directory
+  
+  - name: Include the platform gather role
+    include_role: 
+      name: "gather_{{ ansible_network_os }}"
+
+- name: Write the gathered resources to a file
+  hosts: all
+  gather_facts: False
+  tasks:
+  - name: Copy each resource to a file
+    ansible.builtin.copy:
+      content: "{{ {item['key']: item['value']} | to_nice_yaml }}"
+      dest: "{{ inventory_host_directory }}/{{ item.key }}.yaml"
+    loop: "{{ ansible_network_resources|dict2items }}"
+    loop_control:
+      label: "{{ inventory_host_directory }}/{{ item.key }}.yaml"

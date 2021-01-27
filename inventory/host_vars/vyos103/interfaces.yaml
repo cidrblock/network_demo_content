@@ -1,0 +1,13 @@
+interfaces:
+-   enabled: true
+    name: lo
+-   enabled: true
+    name: eth1
+-   duplex: auto
+    enabled: true
+    name: eth0
+    speed: auto
+-   duplex: auto
+    enabled: true
+    name: eth2
+    speed: auto

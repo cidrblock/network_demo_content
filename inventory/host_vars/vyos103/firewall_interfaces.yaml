@@ -1,0 +1,4 @@
+firewall_interfaces:
+-   name: eth0
+-   name: eth1
+-   name: eth2

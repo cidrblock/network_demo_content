@@ -1,0 +1,6 @@
+l3_interfaces:
+-   ipv4:
+    -   address: dhcp
+    name: GigabitEthernet1
+-   name: GigabitEthernet2
+-   name: GigabitEthernet3
